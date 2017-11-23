@@ -1,0 +1,141 @@
+// program to read integer values n (n > 0) from the console
+// and, for each one, print the sum of the values from 1 to n
+
+program Test {
+
+   int i;
+   constant int a;
+   constant int cons;
+   arr int myArray [7]; 
+   int b;
+   int c;
+   int condition;
+   int d;
+   int e;
+   int f;
+   int firstPar;
+   int secondPar;
+
+
+
+
+
+
+   void SumUp() {
+
+      
+      
+      
+      int j, sum;
+      int index;
+      int testParam;
+      void Subtract() {
+         i := i - 1;
+      }
+      void testPassFunc( int x , int y){              // cant have null functions
+         f := 0;
+         write "x =" ;
+         writeln x ;
+         x := 5;
+         write "x =";
+         writeln x ;
+         y := 6;
+         write "y =";
+         writeln y;
+      }
+      void Add() {
+         if i > 0 {
+            sum := sum + i; 
+            Subtract();
+            Add();
+         }
+      }
+
+
+      for(index := 0; index := index+1; index<10){          // demos for Loop printing hi 10 times in uart1
+         write "hi";
+         write index;
+      }
+
+      testParam := 2;                                 //checking functions
+      write "testParam ---== ";
+      writeln testParam;
+      testPassFunc(testParam, testParam);
+      write "testParam ----= ";
+      writeln testParam;
+      
+      j := i;
+      sum := 0;
+      b := 3;              // checks vars
+      b := a + b;          //checks that constants can be used in ops
+      
+
+
+      myArray [6] := 1;                   // use of arrays                  
+      myArray [4] := myArray [6]; 
+      b := myArray[4];
+      write "b = ";
+      writeln b;
+      myArray[5] := 4;
+
+      write "myArray at 5 = ";
+      c := myArray[5];
+      writeln c;                     // Need to edit write method so it Can take arrays as input
+  //    condition := 5 ? 10 : 2;		// shows a sem error ..5 is not a condition
+
+      condition := true ? 4 : 6;       // demonstrates conditions
+
+      write "condition = ";
+      writeln condition;
+
+      d := 1>2 ? 2 : 3;                // demonstrates condition with expression as boolean
+
+      write "d = ";
+      writeln d;
+      
+      e := 6;
+      switch ( e ){                    // switch statement
+         case 4 : 
+            e := 10;
+            break
+         case 6 :
+            e := 2;
+            break
+         case 3 :
+            e := 3;
+            break
+         default :
+            e := 0;
+            break
+      }
+      write "SWITCH ----e = ";
+      writeln e;
+      
+
+     // b := myArray[10];                // cause semErr (array out of bounds)
+      Add();
+      write "The sum of the values from 1 to ";
+      write j; write " is ";
+      writeln sum;
+   }
+
+   void main() {
+      write "Enter value for i (or 0 to stop): ";
+     // a := 2;              // creates an error static cannot be re-assigned
+
+      writeln b;
+      read i;
+      cons := 7;              // checks constants assignment
+      write "cons ==";
+      writeln cons;
+
+
+
+
+      while i > 0 {
+         SumUp();
+         write "Enter value for i (or 0 to stop): ";
+         read i;
+      }
+   }
+}
